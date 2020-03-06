@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoginService } from '../service/login.service';
+import User from '../models/User';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,19 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  title: string;
+  private user: User;
 
+  constructor(private loginService: LoginService) {}
+
+  updateTitle(){
+    this.title = 'Mon Nouveau Titre';
+    this.user = this.loginService.login('AZEAZE', 'P@ssw0rd!');
+    console.log(this.user);
+  };
+  /*
+  NouvelleMethodeQuiNeSeraPasTester(){
+    this.title = "Mon Nouveau Titre";
+  }
+  */
 }
