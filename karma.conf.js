@@ -6,10 +6,11 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
+      require('karma-jasmine'), // language de programmation
+      require('karma-chrome-launcher'), // connection chrome 
+      require('karma-phantomjs-launcher'), // ajout de phantomjs
+      require('karma-jasmine-html-reporter'), // stats test unitaires 
+      require('karma-coverage-istanbul-reporter'), 
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -25,7 +26,8 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false
+    //browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
+    singleRun: false // si "true", ouvre chrome, effectue les test puis ferme chrome
   });
 };
