@@ -6,18 +6,17 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
-      require('karma-jasmine'), // language de programmation
-      require('karma-chrome-launcher'), // connection chrome 
-      // require('karma-phantomjs-launcher'), // ajout de phantomjs
-      require('karma-jasmine-html-reporter'), // stats test unitaires 
-      require('karma-coverage-istanbul-reporter'), 
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../coverage'),
+      dir: require('path').join(__dirname, './coverage'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
@@ -25,9 +24,7 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
-    //browsers: ['Chrome'],
     browsers: ['ChromeHeadless'],
-    singleRun: false // si "true", ouvre chrome, effectue les test puis ferme chrome
+    singleRun: true
   });
 };

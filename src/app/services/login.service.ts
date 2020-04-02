@@ -9,6 +9,6 @@ export class LoginService {
   constructor() { }
 
   login(id: string, mdp: string): User {
-      return new User(id, 'Nom', 'Prenom', 'email@ynov.com');
+    return new User(id, 'Nom', 'Prénom', 'email@ynov.com');
   }
 }

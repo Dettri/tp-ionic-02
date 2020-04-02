@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../service/login.service';
+import {LoginService} from '../services/login.service';
 import User from '../models/User';
 
 @Component({
@@ -14,14 +14,13 @@ export class HomePage {
 
   constructor(private loginService: LoginService) {}
 
-  updateTitle(){
+  updateTitle() {
     this.title = 'Mon Nouveau Titre';
-    this.user = this.loginService.login('AZEAZE', 'P@ssw0rd!');
+    this.user = this.loginService.login('AZEAZEAZE', 'P@ssw0rd');
     console.log(this.user);
-  };
-  /*
-  NouvelleMethodeQuiNeSeraPasTester(){
-    this.title = "Mon Nouveau Titre";
   }
-  */
+
+  maNouvelleMethodeQuiNeSeraPasTestee() {
+    this.title = 'Mon Nouveau Titre';
+  }
 }
