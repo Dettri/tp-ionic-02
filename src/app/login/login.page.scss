@@ -1,0 +1,22 @@
+:host{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    ion-content{
+        width: 400px;
+       
+        > ion-item{
+            margin-bottom: 50px;
+    
+            > ion-label{
+                color: rgb(56, 56, 241);
+                &.color-red{
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+
+

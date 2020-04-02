@@ -8,7 +8,7 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'), // language de programmation
       require('karma-chrome-launcher'), // connection chrome 
-      require('karma-phantomjs-launcher'), // ajout de phantomjs
+      // require('karma-phantomjs-launcher'), // ajout de phantomjs
       require('karma-jasmine-html-reporter'), // stats test unitaires 
       require('karma-coverage-istanbul-reporter'), 
       require('@angular-devkit/build-angular/plugins/karma')
@@ -27,7 +27,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     //browsers: ['Chrome'],
-    browsers: ['PhantomJS'],
+    browsers: ['ChromeHeadless'],
     singleRun: false // si "true", ouvre chrome, effectue les test puis ferme chrome
   });
 };
