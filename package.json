@@ -9,7 +9,7 @@
     "build": "ng build",
     "build:android": "npm run prepare:android && ionic cordova build android --prod --release",
     "prepare:android": "ionic cordova prepare android --prod --no-build",
-    "emulate:android": "npm run prepare:android && ionic cordova emulate android --prod --target=Pixel_3_XL_API_28",
+    "emulate:android": "npm run prepare:android && ionic cordova emulate android --prod --target",
     "test": "ng test --code-coverage",
     "test:local": "ng test --code-coverage --watch --browsers=Chrome",
     "lint": "ng lint",
