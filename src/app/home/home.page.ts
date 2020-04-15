@@ -10,8 +10,15 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 })
 export class HomePage {
 
+  // title
   title: string;
+
+  // camera
   imgData: string;
+
+  // geolocation
+  latitude: number;
+  longitude: number;
 
   constructor(private alertController: AlertController, private camera: Camera, private geolocation: Geolocation) {}
 
@@ -58,18 +65,22 @@ export class HomePage {
 
   getGeolocation() {
     this.geolocation.getCurrentPosition().then((resp) => {
-      resp.coords.latitude
-      resp.coords.longitude
+      this.latitude = resp.coords.latitude;
+      this.longitude = resp.coords.longitude;
+      //resp.coords.latitude
+      //resp.coords.longitude
      }).catch((error) => {
        console.log('Error getting location', error);
      });
      
+     /*
      let watch = this.geolocation.watchPosition();
      watch.subscribe((data) => {
       // data can be a set of coordinates, or an error (if an error occurred).
       data.coords.latitude
       data.coords.longitude
      });
+     */
   }
 
 }
