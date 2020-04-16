@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {AlertController} from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 @Component({
   selector: 'app-home',
@@ -17,10 +18,14 @@ export class HomePage {
   imgData: string;
 
   // geolocation
-  latitude: number;
-  longitude: number;
+  
+  //latitude: number;
+  //longitude: number;
 
-  constructor(private alertController: AlertController, private camera: Camera, private geolocation: Geolocation) {}
+  latitude2: number;
+  longitude2: number;
+
+  constructor(private alertController: AlertController, private camera: Camera, private geolocation: Geolocation, private localNotifications: LocalNotifications) {}
 
   updateTitle() {
     this.title = 'Mon Nouveau Titre';
@@ -64,6 +69,7 @@ export class HomePage {
   }
 
   getGeolocation() {
+    /*
     this.geolocation.getCurrentPosition().then((resp) => {
       this.latitude = resp.coords.latitude;
       this.longitude = resp.coords.longitude;
@@ -72,15 +78,23 @@ export class HomePage {
      }).catch((error) => {
        console.log('Error getting location', error);
      });
-     
-     /*
+     */
+
      let watch = this.geolocation.watchPosition();
      watch.subscribe((data) => {
       // data can be a set of coordinates, or an error (if an error occurred).
-      data.coords.latitude
-      data.coords.longitude
+      this.latitude2 = data.coords.latitude
+      this.longitude2 = data.coords.longitude
      });
-     */
   }
 
+  // Schedule a single notification
+  showNotification(){
+    this.localNotifications.schedule({
+      id: 1,
+      text: 'Your notification appears',
+      data: { secret: "key" }
+    });
+  }
+ 
 }

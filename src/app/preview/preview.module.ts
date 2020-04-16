@@ -4,10 +4,11 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { HomePage } from './home.page';
+import { PreviewPage } from './preview.page';
 import { Camera } from '@ionic-native/camera/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';
 
 @NgModule({
   imports: [
@@ -17,11 +18,11 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
     RouterModule.forChild([
       {
         path: '',
-        component: HomePage
+        component: PreviewPage
       }
     ])
   ],
-  declarations: [HomePage],
-  providers: [Camera, Geolocation, LocalNotifications]
+  declarations: [PreviewPage],
+  providers: [Camera, CameraPreview]
 })
-export class HomePageModule {}
+export class PreviewPageModule {}
