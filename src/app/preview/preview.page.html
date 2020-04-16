@@ -4,5 +4,9 @@
       <ion-icon name="camera" slot="start"></ion-icon>
       <ion-label>Camera Preview</ion-label>
   </ion-item>
+  <ion-text id="description"> (click to launch preview) </ion-text>
+  <ion-card *ngIf="picture">
+    <img [src]="picture">
+  </ion-card>
   </div>
 </ion-content>

@@ -15,10 +15,10 @@ export class PreviewPage {
   cameraOpts: CameraPreviewOptions = {
     x: 0,
     y: 0,
-    camera: 'rear',
+    camera: 'back',
     width: window.innerWidth,
     height: window.innerHeight,
-    toBack: true
+    //toBack: true
   };
 
   cameraPictureOpts: CameraPreviewPictureOptions = {
