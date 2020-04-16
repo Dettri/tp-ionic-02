@@ -1,6 +1,6 @@
 # TP IONIC 02
 ###### From _ionic blank starter_
-![Angular CI](https://https://github.com/Dettri/tp-ionic-02/workflows/Angular%20CI/badge.svg?branch=master)
+![Angular CI](https://github.com/Dettri/tp-ionic-02/workflows/Angular%20CI/badge.svg)
 #### Notation
 
 - CI:
