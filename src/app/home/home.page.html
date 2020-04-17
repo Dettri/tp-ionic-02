@@ -52,15 +52,23 @@
           <ion-label>Get geolocation</ion-label>
         </ion-item>
         <!-- <ion-button expand="block" fill="outline" >Get data location</ion-button> -->
+        <!--
         <ion-list>
           <ion-item>
-            <ion-label>Latitude : {{latitude2}}</ion-label>
+            <ion-label>{{latitude2}}</ion-label>
           </ion-item>
           <ion-item>
-            <ion-label>Longitude : {{longitude2}}</ion-label>
+            <ion-label>{{longitude2}}</ion-label>
           </ion-item>
         </ion-list>
+        -->
       </ion-card>
+      
+      <ul>
+        <li inset *ngFor="let item of listGeolocation">
+          {{item}}
+        </li>
+      </ul>
 
       <ion-item (click)="showNotification()" class="ion-activated"> 
         <ion-icon name="notifications" slot="start"></ion-icon>

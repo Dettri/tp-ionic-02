@@ -3,6 +3,7 @@ import {AlertController} from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { HtmlParser } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -22,8 +23,9 @@ export class HomePage {
   //latitude: number;
   //longitude: number;
 
-  latitude2: number;
-  longitude2: number;
+  listGeolocation:any [];
+  latitude2: string;
+  longitude2: string;
 
   constructor(private alertController: AlertController, private camera: Camera, private geolocation: Geolocation, private localNotifications: LocalNotifications) {}
 
@@ -83,8 +85,9 @@ export class HomePage {
      let watch = this.geolocation.watchPosition();
      watch.subscribe((data) => {
       // data can be a set of coordinates, or an error (if an error occurred).
-      this.latitude2 = data.coords.latitude
-      this.longitude2 = data.coords.longitude
+      this.latitude2 = "latitude : " + data.coords.latitude;
+      this.longitude2 = "longitude : " + data.coords.longitude;
+      this.listGeolocation = ["latitude : " + data.coords.latitude, "longitude : " + data.coords.longitude];
      });
   }
 
