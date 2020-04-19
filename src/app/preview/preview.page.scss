@@ -1,15 +1,45 @@
+
 #description {
 
     font-size: 10px;
     padding-left: 20px;
+    text-align: center
 
 }
 
-ion-item.ion-activated{
-    cursor: pointer;
+#titleSection {
+
+    text-align: center;
+
 }
 
-ion-content ion-toolbar {
-    --background: translucent;
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 10%;
+    transform: translateY(-50%);
+    ion-card{
+      max-width: 300px;
+    }
+    ion-item.ion-activated{
+      cursor: pointer;
+    }
+  }
+  
+
+// html, body, .ion-app, .ion-content {
+//     background-color: transparent;
+//   }
+
+  .custom-ion-content{
+    --background:transparent;
 }
+ 
+// ion-content ion-toolbar {
+//     --background: translucent;
+// }
+
   
